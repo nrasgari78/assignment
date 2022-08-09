@@ -1,0 +1,98 @@
+.mainLogin{
+  direction: rtl !important;padding:0!important;background: #abbaab;
+  background: -webkit-linear-gradient(to top,  #abbaab , #ffffff);
+  background: linear-gradient(to top, #abbaab ,#ffffff);
+  overflow-y: scroll;height: 100vh
+}
+.formControlLogin{
+  height: 40px !important;
+}
+.headerMain{
+  font-size: 56px;
+  text-align:center;
+}
+.mainRowLogin{
+  width: 40%;margin-right: 26%;margin-left: auto;
+}
+.firstInput{
+  padding-top: 70px !important;
+}
+.inputWidth{
+  width: 71%;
+}
+.secondInput{
+  padding-top: 30px !important
+}
+
+
+/*-------------------------------*/
+a{
+  text-decoration: none;
+  cursor: pointer;
+}
+input::placeholder{
+  color: darkgrey;
+  font-size: 14px;
+}
+.btnLogin:focus{
+  outline: none;
+  box-shadow: none;
+}
+option{
+  font-family: 'iransans ' !important;
+}
+.btnLogin:hover{
+  background-color: #676FA3;
+  transform: translateY(-1px) !important;
+  transition: all 0.2s ease-in-out;
+}
+
+h2{
+  font-size: 40px !important;
+}
+/*--------------------------------------*/
+.title{
+  font-family: 'IranNastaliq' !important;
+
+}
+.colRightInputs{
+  background-color: #ffffff;
+  border-top-right-radius: 100px;
+  border-bottom-left-radius: 100px;
+  box-shadow:0 0 20px 8px rgba(0,0,0,0.34) ;
+
+}
+.userName{
+  padding-top: 10px !important;
+  padding-left: 10px;
+
+}
+.input{
+  height: 40px;
+  border: 1px solid #fbfbfc !important;
+}
+.inputs{
+  height: 420px !important;
+  margin-right: 12%;
+}
+
+input::placeholder{
+  color: #e3e3e3 !important;
+  padding-right:5px;
+  font-size: 14px;
+}
+.btnDiv{
+  margin-right: 10%;margin-top: 30px;
+}
+.btnLogIn2{
+  width: 40%;
+  background-color: #698474;
+  color: white;
+  margin-top: 29px;
+  margin-right: 77px;
+  height: 39px;
+}
+
+
+/*----------scroll---------------*/
+

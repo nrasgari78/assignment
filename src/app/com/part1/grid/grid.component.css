@@ -1,0 +1,38 @@
+
+*{
+  font-weight: 500 !important;
+}
+
+table.minimalistBlack {
+  border: 1px solid #000000;
+  text-align: center;
+  border-collapse: collapse;
+  direction: rtl ;
+  table-layout: fixed;
+  width: 80%
+}
+
+/*-------------------------------------*/
+
+.colTd2{
+  word-wrap:break-word;
+  width: 10px;
+}
+table th{
+  border: 1px solid black
+}
+table {
+  border: 1px solid black
+}
+
+table td{
+  border: 1px solid #12522c
+}
+thead{
+  background-color: #84A9AC;box-shadow: inset 1px 1px 10px 0 #000000;color: white;font-size: 17px
+}
+
+p{
+  width: 100px;
+  margin-top: 10px;
+}

@@ -1,0 +1,10 @@
+{
+  "/api": {
+    "target": "http://37.255.223.118:9402",
+    "secure": false,
+    "pathRewrite": {
+      "^/api": ""
+    },
+    "logLevel": "debug"
+  }
+}

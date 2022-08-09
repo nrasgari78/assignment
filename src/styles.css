@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.page-item.active .page-link{
+  background-color: #4F8A8B;
+  border-color: #4F8A8B;
+  color: white;
+}
+@font-face {
+  font-family: iransans;
+  src:  url(assets/fonts/iransans/IRANSansWebFaNum-Medium.ttf);
+}
+*{
+  font-family: iransans !important;
+
+}
