@@ -3,9 +3,10 @@ import {HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest,
 import {catchError, map, Observable, of, take, throwError} from "rxjs";
 import {Router} from "@angular/router";
 
-
+import {environment} from "../environments/environment";
 
 export class HeaderInterceptor implements HttpInterceptor {
+  path=environment.apiUrl
   constructor() {
   }
 
@@ -24,7 +25,7 @@ export class HeaderInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const token: string | null = localStorage.getItem('token');
 
-    // request=request.clone({url:path + request.url})
+    request=request.clone({url:environment.apiUrl + request.url})
     if (token) {
       request = request.clone({headers: request.headers.set('Authorization', 'Bearer ' + token)});
     }

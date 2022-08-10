@@ -13,11 +13,9 @@ LogSrv(user:string,pass:string){
       'userName':user,
       'userPass':pass
     }
-  const headerDict = {
-    'Content-Type': 'application/json',
-  }
+
   const body=JSON.stringify(data)
-  return this.http.post<any>(this.baseurl+'/api/Auth/login',body)
+  return this.http.post<any>('/api/Auth/login',body)
 
 }
 }
