@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './com/login/login.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {HeaderInterceptor} from "../utility/HeaderInterceptor";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +19,8 @@ import {HeaderInterceptor} from "../utility/HeaderInterceptor";
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-
+    BrowserAnimationsModule,
+    MatAutocompleteModule
   ],
   providers: [
     {provide:HTTP_INTERCEPTORS,

@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   this.loginSrv.LogSrv(user,pass).subscribe(res=>{
   if(res)
     localStorage.setItem('token',res.token)
-    this.router.navigate(['list'])
+    this.router.navigate(['part1'])
   }
 
 

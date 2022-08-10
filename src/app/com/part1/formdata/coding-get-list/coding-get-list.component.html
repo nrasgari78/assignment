@@ -1,0 +1,10 @@
+<form [formGroup]="formCoding">
+
+  <input formControlName="search" style="border: ridge;margin-right: 5px" type="text">
+
+  <select #selectList formControlName="RUSR28007"  class="form-select"  style="width: 80%">
+    <option></option>
+    <option *ngFor="let item of CodingData['data'] | async" [value]="item.value"> {{item.text}}</option>
+  </select>
+</form>
+

@@ -15,9 +15,10 @@ len:any
 
   ngOnChanges() {
   console.log(this.gridData)
-  if(this.gridData) {
+  if(this.gridData[0]) {
 
     const l = Object.keys(this.gridData[0]).length
+    console.log(l)
     this.len = Array(l).fill(0).map((x, i) => i + 1);
 console.log(this.len)
   }
