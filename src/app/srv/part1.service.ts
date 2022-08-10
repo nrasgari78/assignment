@@ -15,4 +15,11 @@ folderid=0o201
 
     return this.http.get<any>('/api/FolderData/getGrid',{params})
   }
+  GetCoding(search:string){
+  console.log(search)
+  let params=new HttpParams()
+    .set('codingId','PRSACC05')
+    .set('search',search)
+    return this.http.get<any>('/api/Coding/codingGetList',{params})
+  }
 }

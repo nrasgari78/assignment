@@ -1,8 +1,6 @@
 
 
-.card-header{
-  background-color: #D3E4CD
-}
+
 .label{
   font-size: 14px;
   margin-top: 5px;
@@ -10,15 +8,5 @@
   width: 40%;
 }
 
-.custom-card{
-  border-radius: 10px;
-  -webkit-box-shadow: -1px 3px 20px -2px #000000;
-  box-shadow: -1px 3px 20px -2px #DDDDDD;
-}
-.cardOne{
-  direction: rtl;
-  margin-bottom: 15px;
-  padding: 0;
-  width: 90%;
-}
+
 

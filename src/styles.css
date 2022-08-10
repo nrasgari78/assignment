@@ -14,3 +14,21 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   font-family: iransans !important;
 
 }
+.custom-card{
+  border-radius: 10px;
+  -webkit-box-shadow: -1px 3px 20px -2px #000000;
+  box-shadow: -1px 3px 20px -2px #DDDDDD;
+}
+.cardOne{
+  direction: rtl;
+  margin-bottom: 15px;
+  padding: 0;
+  width: 90%;
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+
+}
+.card-header{
+  background-color: #D3E4CD
+}
