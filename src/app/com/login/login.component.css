@@ -12,7 +12,7 @@
   text-align:center;
 }
 .mainRowLogin{
-  width: 40%;margin-right: 26%;margin-left: auto;
+  width: 34%;margin-right: 31%;margin-left: auto;
 }
 .firstInput{
   padding-top: 70px !important;
@@ -72,7 +72,7 @@ h2{
   border: 1px solid #fbfbfc !important;
 }
 .inputs{
-  height: 420px !important;
+  height: 300px !important;
   margin-right: 12%;
 }
 

@@ -19,7 +19,8 @@ import { CodingGetListComponent } from './formdata/coding-get-list/coding-get-li
   imports: [
     CommonModule,
     Part1RoutingModule,
-    SharedModule
+    SharedModule,
+
   ]
 })
 export class Part1Module { }

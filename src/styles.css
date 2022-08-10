@@ -32,3 +32,16 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .card-header{
   background-color: #D3E4CD
 }
+.mat-autocomplete-panel.mat-autocomplete-visible{
+  position: absolute!important;
+  top: inherit!important;
+  left: inherit!important;
+  background-color: beige!important;
+  width: auto!important;
+  direction: rtl!important;
+
+}
+.mat-option-text{
+  text-align: right!important;
+  width: 200px;
+}

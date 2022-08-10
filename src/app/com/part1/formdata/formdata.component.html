@@ -11,20 +11,17 @@
               <div class="col-4 d-flex">
                 <label class="col-form-label ">
                   تاریخ :</label>
-                <input type="text" required  formControlName="Date" [ngClass]="{'alert1':formData.get('Date')?.invalid && formData.get('Date')?.touched}" class="form-control">
-
-                <ng-container *ngIf="formData.get('Date')?.invalid && formData.get('Date')?.touched">
-                  <span class="tooltiptext" style="top:35%"  *ngIf="formData.get('Date')?.errors?.['maxlength']">طول درست وارد شود</span>
+                <input type="text" formControlName="Date" [ngClass]="{'alert1':formData.get('Date')?.invalid && formData.get('Date')?.touched}" class="form-control" style="width: 221px">
+              </div>
+              <div class="col-6 d-flex">
+                <label class="col-form-label " >
+                  موضوع:</label>
+                <input type="text" style="width: 222px" [ngClass]="{'alert1':formData.get('subject')?.invalid && formData.get('subject')?.touched}" formControlName="subject" class="form-control" style="width: 221px" >
+                <ng-container *ngIf="formData.get('subject')?.invalid && formData.get('subject')?.touched">
+                  <span class="tooltiptext" style="top:11%"  *ngIf="formData.get('subject')?.errors?.['maxlength']">طول درست وارد شود</span>
 
                 </ng-container>
               </div>
-              <div class="col-4 d-flex">
-                <label class="col-form-label " >
-                  موضوع:</label>
-                <input type="text" maxlength="50"   [ngClass]="{'alert1':formData.get('subject')?.invalid && formData.get('subject')?.touched}" formControlName="subject" class="form-control" >
-              </div>
-
-              <div class="col-2"></div>
               <div class="col-2">
                 <button type="button" class="btn  btnSabt" (click)="submitform()" >
                   ثبت
@@ -37,23 +34,30 @@
             <div class="col-12 d-flex mt-3">
               <div class="col-4 d-flex">
                 <label class="col-form-label ">نام :</label>
-                <input type="text" maxlength="50"  [ngClass]="{'alert1':formData.get('CUSR28005')?.invalid && formData.get('CUSR28005')?.touched}"  formControlName="CUSR28005" class="form-control" >
+                <input type="text"   [ngClass]="{'alert1':formData.get('CUSR28005')?.invalid && formData.get('CUSR28005')?.touched}"  formControlName="CUSR28005" class="form-control" style="width: 221px" >
+                <ng-container *ngIf="formData.get('CUSR28005')?.invalid && formData.get('CUSR28005')?.touched">
+                  <span class="tooltiptext" style="top:27%"  *ngIf="formData.get('subject')?.errors?.['maxlength']">طول درست وارد شود</span>
+
+                </ng-container>
 
               </div>
-              <div class="col-4 d-flex">
+              <div class="col-6 d-flex">
                 <label class="col-form-label " >
                   نام خانوادگی خریدار:</label>
-                <input type="text" maxlength="50" [ngClass]="{'alert1':formData.get('CUSR28006')?.invalid && formData.get('CUSR28006')?.touched}"  formControlName="CUSR28006" class="form-control">
+                <input type="text" style="width: 222px" [ngClass]="{'alert1':formData.get('CUSR28006')?.invalid && formData.get('CUSR28006')?.touched}"  formControlName="CUSR28006" class="form-control" >
               </div>
             </div>
             <div class="col-12 d-flex mt-3 ">
               <div class="col-4 d-flex">
                 <label class="col-form-label" >حساب:</label>
-           <app-coding-get-list></app-coding-get-list>
+           <app-coding-get-list
+             (eventselecteditem)="selecteditem=$event">
+
+           </app-coding-get-list>
               </div>
-              <div class="col-4 d-flex">
+              <div class="col-6 d-flex">
                 <label class="col-form-label" >تحویل گیرنده:</label>
-                <select formControlName="RUSR28008"  class="form-select"  style="width: 70%">
+                <select  formControlName="RUSR28008"  class="form-select"  style="width: 221px">
                   <option> دلد</option>
                 </select>
               </div>
@@ -63,7 +67,7 @@
               <div class="col-4 d-flex ">
                 <label class="col-form-label " >
                   توضیحات:</label>
-                <textarea type="text" maxlength="50" [ngClass]="{'alert1':formData.get('description')?.invalid && formData.get('description')?.touched}"  formControlName="description" class="form-control"></textarea>
+                <textarea type="text"  [ngClass]="{'alert1':formData.get('description')?.invalid && formData.get('description')?.touched}"  formControlName="description" class="form-control" style="width: 221px"></textarea>
               </div>
             </div>
 

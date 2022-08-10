@@ -1,10 +1,25 @@
-<form [formGroup]="formCoding">
+<form [formGroup]="formCoding" >
 
-  <input formControlName="search" style="border: ridge;margin-right: 5px" type="text">
+      <input type="text"
+             placeholder="انتخاب کنید"
+             matInput
+             formControlName="search"
+             [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete" >
+        <mat-option  *ngFor="let item of CodingData | async" [value]="item['value']" #list (onSelectionChange)="selectlst(list.value)">
+          {{item['text']}}
+        </mat-option>
+      </mat-autocomplete>
 
-  <select #selectList formControlName="RUSR28007"  class="form-select"  style="width: 80%">
-    <option></option>
-    <option *ngFor="let item of CodingData['data'] | async" [value]="item.value"> {{item.text}}</option>
-  </select>
 </form>
+
+
+
+<!--  <input formControlName="search" style="border: ridge;margin-right: 5px" type="text">-->
+
+<!--  <select #selectList formControlName="RUSR28007"  class="form-select"  style="width: 80%">-->
+<!--    <option></option>-->
+<!--    <option *ngFor="let item of CodingData | async" [value]="item['value']"> {{item['text']}}</option>-->
+<!--  </select>-->
+
 

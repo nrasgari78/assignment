@@ -31,7 +31,11 @@ table td{
   border: 1px solid #12522c
 }
 thead{
-  background-color: #84A9AC;box-shadow: inset 1px 1px 10px 0 #000000;color: white;font-size: 17px
+  background-color: #84A9AC;
+  box-shadow: inset 1px 1px 10px 0 #000000;
+  color: white;
+  font-size: 17px;
+  vertical-align: middle;
 }
 
 p{

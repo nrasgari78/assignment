@@ -19,6 +19,8 @@ export class LoginComponent implements OnInit {
   if(res)
     localStorage.setItem('token',res.token)
     this.router.navigate(['part1'])
+    this.loginSrv.setDataToBack(user)
+
   }
 
 

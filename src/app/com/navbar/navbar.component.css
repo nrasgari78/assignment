@@ -1,0 +1,49 @@
+
+.dateDay{
+  margin-left: 20px;margin-top: 8px;direction: rtl;color: white
+}
+.dateDay:hover{
+  transform: translateY(-2px) !important;
+  transition: all 0.2s ease-in-out;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+.divNav{
+  background-color:#378a8a!important;
+  height: 38px;
+  width: 100% !important ;
+
+}
+.spanNav{
+  cursor:pointer;float: right;margin-right: 30px;
+  color: white; margin-top: 1%;font-size: 26px
+
+}
+.bi-bell{
+  color: white;
+}
+
+.userInfo{
+  margin-left: 30px;margin-top: 7px;cursor: pointer;text-decoration: none;color: white;
+}
+.userInfo:hover{
+  transform: translateY(-2px) !important;
+  transition: all 0.2s ease-in-out;
+}
+.notification{
+  margin-left: 30px;margin-top: 7px;cursor: pointer;color: black;
+}
+.notification:hover{
+
+  transform: translateY(-2px) !important;
+  transition: all 0.2s ease-in-out;
+}
+.exit{
+  margin-left:25px;width: 17px;margin-top: 2px;
+}
+.pExit{
+  margin-left:20px;font-size: 10px;color: red
+}

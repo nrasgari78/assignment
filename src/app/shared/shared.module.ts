@@ -2,10 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MouseoverDirectiveDirective} from "../directive/mouseover-directive.directive";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
-import {MatNativeDateModule} from "@angular/material/core";
+import {MatAutocompleteModule} from "@angular/material/autocomplete";
+import {MatFormFieldModule} from "@angular/material/form-field";
 
 @NgModule({
   declarations: [MouseoverDirectiveDirective],
@@ -14,7 +13,9 @@ import {MatNativeDateModule} from "@angular/material/core";
     NgbModule,
     FormsModule,
     ReactiveFormsModule,
-    MatNativeDateModule,
+    MatAutocompleteModule,
+    MatFormFieldModule
+
     ]
 })
 export class SharedModule { }

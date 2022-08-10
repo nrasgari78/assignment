@@ -1,28 +1,12 @@
 
-.th,td{
-  border: 1px solid black
-}
 
 .row{
   direction: rtl;justify-content: center
 }
 .col-form-label{
-  width:35%;text-align: left;
-}
-.form-control{
-  width: 70%;
-}
-.table{
-  direction: rtl
-}
-thead{
-  background-color: #84A9AC;box-shadow: inset 1px 1px 10px 0 #000000;color: white;font-size: 17px
-}
-.td-col8{
-  word-wrap:break-word
-}
-.table{
-  direction: rtl;table-layout: fixed;width: 100%
+  width:35%;
+  text-align: left;
+  margin-left: 5px;
 }
 .denny{
   background-color: transparent!important;
@@ -73,3 +57,4 @@ thead{
   position: absolute;
   font-size: 10px;
 }
+

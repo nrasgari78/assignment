@@ -6,7 +6,6 @@ import {Observable} from "rxjs";
   providedIn: 'root'
 })
 export class Part1Service {
-folderid=0o201
   constructor(private http: HttpClient) {
   }
 
@@ -16,7 +15,6 @@ folderid=0o201
     return this.http.get<any>('/api/FolderData/getGrid',{params})
   }
   GetCoding(search:string){
-  console.log(search)
   let params=new HttpParams()
     .set('codingId','PRSACC05')
     .set('search',search)
