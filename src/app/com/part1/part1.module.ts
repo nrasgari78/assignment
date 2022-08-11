@@ -16,11 +16,10 @@ import { CodingGetListComponent } from './formdata/coding-get-list/coding-get-li
     FormdataComponent,
     CodingGetListComponent
   ],
-  imports: [
-    CommonModule,
-    Part1RoutingModule,
-    SharedModule,
-
-  ]
+    imports: [
+        CommonModule,
+        Part1RoutingModule,
+        SharedModule,
+    ]
 })
 export class Part1Module { }

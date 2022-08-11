@@ -11,7 +11,12 @@
               <div class="col-4 d-flex">
                 <label class="col-form-label ">
                   تاریخ :</label>
-                <input type="text" formControlName="Date" [ngClass]="{'alert1':formData.get('Date')?.invalid && formData.get('Date')?.touched}" class="form-control" style="width: 221px">
+                <input autofocus  type="text" [patterns]="customPatterns"  mask="00000000" maxlength="8" minlength="8" formControlName="Date" [ngClass]="{'alert1':formData.get('Date')?.invalid && formData.get('Date')?.touched}" class="form-control" style="width: 221px">
+                <ng-container *ngIf="formData.get('Date')?.invalid && formData.get('Date')?.touched">
+                  <span class="tooltiptext" style="top:11%" *ngIf="formData.get('Date')?.errors?.['pattern']"> طول 8 عدد باشد</span>
+                  <span class="tooltiptext" style="top:11%"  *ngIf="formData.get('Date')?.errors?.['minlength']"> طول 8 عدد باشد</span>
+
+                </ng-container>
               </div>
               <div class="col-6 d-flex">
                 <label class="col-form-label " >
@@ -24,21 +29,16 @@
               </div>
               <div class="col-2">
                 <button type="button" class="btn  btnSabt" (click)="submitform()" >
-                  ثبت
+                  Save
                 </button>
                 <button class="btn btnCancel1" type="button" *ngIf="inpedit==true" (click)="denyEdit()" >
-                  انصراف
-                </button>
+                  Clear                </button>
               </div>
             </div>
             <div class="col-12 d-flex mt-3">
               <div class="col-4 d-flex">
                 <label class="col-form-label ">نام :</label>
-                <input type="text"   [ngClass]="{'alert1':formData.get('CUSR28005')?.invalid && formData.get('CUSR28005')?.touched}"  formControlName="CUSR28005" class="form-control" style="width: 221px" >
-                <ng-container *ngIf="formData.get('CUSR28005')?.invalid && formData.get('CUSR28005')?.touched">
-                  <span class="tooltiptext" style="top:27%"  *ngIf="formData.get('subject')?.errors?.['maxlength']">طول درست وارد شود</span>
-
-                </ng-container>
+                <input type="text" [ngClass]="{'alert1':formData.get('CUSR28005')?.invalid && formData.get('CUSR28005')?.touched}"  formControlName="CUSR28005" class="form-control" style="width: 221px" >
 
               </div>
               <div class="col-6 d-flex">
@@ -51,7 +51,8 @@
               <div class="col-4 d-flex">
                 <label class="col-form-label" >حساب:</label>
            <app-coding-get-list
-             (eventselecteditem)="selecteditem=$event">
+             (eventselecteditem)="selecteditem=$event"
+             [selected]="selecteditem">
 
            </app-coding-get-list>
               </div>
@@ -82,3 +83,4 @@
     </div>
   </div>
 </div>
+<ngx-loading [show]="loading"></ngx-loading>

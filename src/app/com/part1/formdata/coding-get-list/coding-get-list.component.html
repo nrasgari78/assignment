@@ -4,8 +4,9 @@
              placeholder="انتخاب کنید"
              matInput
              formControlName="search"
-             [matAutocomplete]="auto">
+             [matAutocomplete]="auto" [value]="selected===''?null:selected">
       <mat-autocomplete #auto="matAutocomplete" >
+<!--        <mat-option disabled (select)="selected===''?'...':'1'">{{selected===''?'...':'1'}}</mat-option>-->
         <mat-option  *ngFor="let item of CodingData | async" [value]="item['value']" #list (onSelectionChange)="selectlst(list.value)">
           {{item['text']}}
         </mat-option>

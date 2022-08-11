@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, Validators} from "@angular/forms";
 import Swal from "sweetalert2";
 import {Router} from "@angular/router";
+import {Part1Service} from "../../../srv/part1.service";
 
 @Component({
   selector: 'app-formdata',
@@ -10,8 +11,9 @@ import {Router} from "@angular/router";
 })
 export class FormdataComponent implements OnInit {
 
-  formData = this.fb.group({
-    Date: ['', [Validators.required]],
+    customPatterns = { '0': { pattern: new RegExp('[0-9]')} };
+    formData = this.fb.group({
+    Date: ['', [Validators.required, Validators.maxLength(9), Validators.pattern("^[0-9]{8}$")]],
     subject: ['', [Validators.required, Validators.maxLength(20)]],
     description: ['', [Validators.maxLength(50)]],
     CUSR28005: ['', [Validators.required, Validators.maxLength(20)]],
@@ -23,18 +25,21 @@ export class FormdataComponent implements OnInit {
   selecteditem: string=''
 
   constructor(private fb: FormBuilder,
-              private router: Router) {
+              private router: Router,
+              private formsrv:Part1Service) {
   }
 
   ngOnInit(): void {
   }
 
   denyEdit() {
+    this.formData.reset()
+    this.loading=false
+    this.selecteditem=''
 
   }
 
   submitform() {
-    console.log(this.selecteditem)
 
     this.loading = true
     if (this.formData.get(['Date'])?.errors?.['required']) {
@@ -51,36 +56,45 @@ export class FormdataComponent implements OnInit {
       Swal.fire({icon: 'error', text: 'طول نام بیشتر از حد مجاز است!'})
     } else if (this.formData.get(['CUSR28006'])?.errors?.['maxlength']) {
       Swal.fire({icon: 'error', text: 'طول نام خانوادگی بیشتر از حد مجاز است!'})
-    } else {
+    } else if (this.formData.get(['Date'])?.errors?.['pattern']) {
+      Swal.fire({icon: 'error', text: 'تاریخ اشتباه وارد شده ست!'})
+    } else
+      {
       if (this.inpedit === true) {
         const data = {
           "id": "0",
           "folderId": 201,
-          "date": "14010501",
-          "subject":'',
-          "description":'',
+          "date": this.formData.get(['Date'])?.value,
+          "subject":this.formData.get(['subject'])?.value,
+          "description":this.formData.get(['description'])?.value,
           "dynamicParams": [
           {
             "name": "CUSR28005",
-            "value":''
+            "value":this.formData.get(['CUSR28005'])?.value
           },
           {
             "name": "CUSR28006",
-            "value":''
+            "value":this.formData.get(['CUSR28006'])?.value
           },
           {
             "name": "RUSR28007",
-            "value":''
+            "value":this.selecteditem
           },
           {
             "name": "RUSR28008",
-            "value":''
+            "value":this.formData.get(['RUSR28008'])?.value
           }
         ],
           "workflowSchemeId": 0,
           "workflowInboxId": ""
       }
-
+        this.formsrv.SubmitForm(data).subscribe(res=>{
+          console.log(res)
+          if(res.success){
+            Swal.fire({icon: 'success', text: 'اطلاعات با موفقیت ذخیره شد'})
+            this.denyEdit()
+          }
+        })
       }
     }
   }

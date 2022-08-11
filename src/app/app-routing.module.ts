@@ -10,16 +10,8 @@ const routes: Routes = [
   {path: '', component: NavbarComponent,
     children: [
       {path: 'part1', loadChildren: () => import('./com/part1/part1.module').then(m => m.Part1Module)},
-      {path: '**', pathMatch: 'full', component:ErrorComponent },
-
-    ]
-}
-  // {
-  //   path: '', component: LoginComponent,
-  //   children: [
-  //     {path: 'part1', loadChildren: () => import('./com/part1/part1.module').then(m => m.Part1Module)}
-  //   ]
-  // }
+      {path: '**', pathMatch: 'full', component:ErrorComponent },]
+  }
 ];
 
 @NgModule({

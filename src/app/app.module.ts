@@ -8,6 +8,11 @@ import {HeaderInterceptor} from "../utility/HeaderInterceptor";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './com/navbar/navbar.component';
 import { ErrorComponent } from './com/error-component/error-component.component';
+import { NgxMaskModule, IConfig } from 'ngx-mask';
+const maskConfig: Partial<IConfig> = {
+  validation: false,
+};
+import {SharedModule} from "./shared/shared.module";
 
 @NgModule({
   declarations: [
@@ -22,6 +27,9 @@ import { ErrorComponent } from './com/error-component/error-component.component'
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    NgxMaskModule.forRoot(maskConfig),
+    SharedModule,
+
 
   ],
   providers: [

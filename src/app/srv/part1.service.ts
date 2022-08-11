@@ -20,4 +20,9 @@ export class Part1Service {
     .set('search',search)
     return this.http.get<any>('/api/Coding/codingGetList',{params})
   }
+  SubmitForm(data:any):Observable<any>{
+    const body=JSON.stringify(data)
+    console.log(body)
+    return this.http.post<any>('/api/FolderData/add',body)
+  }
 }

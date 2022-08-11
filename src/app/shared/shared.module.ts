@@ -5,17 +5,23 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {MatAutocompleteModule} from "@angular/material/autocomplete";
 import {MatFormFieldModule} from "@angular/material/form-field";
+import {NgxMaskModule} from "ngx-mask";
+import { NgxLoadingModule } from "ngx-loading";
+import {AutoFocusDirective} from "../directive/auto-focus.directive";
 
 @NgModule({
-  declarations: [MouseoverDirectiveDirective],
+  declarations: [MouseoverDirectiveDirective,AutoFocusDirective],
   imports: [CommonModule],
-  exports:[MouseoverDirectiveDirective,
+  exports:[
+    MouseoverDirectiveDirective,
     NgbModule,
     FormsModule,
     ReactiveFormsModule,
     MatAutocompleteModule,
-    MatFormFieldModule
-
+    MatFormFieldModule,
+    NgxMaskModule,
+    NgxLoadingModule,
+    AutoFocusDirective
     ]
 })
 export class SharedModule { }
