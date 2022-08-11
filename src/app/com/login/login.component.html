@@ -8,11 +8,11 @@
           <ng-container >
             <div class="d-flex firstInput">
               <label class=" d-block userName "  >نام کاربری </label>
-              <input type="text" class="form-control formControlLogin inputWidth"  #user  placeholder="نام کاربری خود را وارد کنید" required >
+              <input autofocus type="text" class="form-control formControlLogin inputWidth"  #user  placeholder="نام کاربری خود را وارد کنید" required >
             </div>
             <div class="d-flex secondInput ">
               <label class=" d-block userName" style="margin-left: 10px;">رمز عبور </label>
-              <input class="form-control inputWidth formControlLogin" #pass type="password" placeholder="رمز عبور خود را وارد کنید" required >
+              <input class="form-control inputWidth formControlLogin" #pass (keydown)="LoginFun(user.value,pass.value)" type="password" placeholder="رمز عبور خود را وارد کنید" required >
             </div>
               <div class="d-flex secondInput ">
                 <button type="button"  class="btn btnLogIn2 d-block mt-3 "   (click)="LoginFun(user.value,pass.value)">ورود</button>

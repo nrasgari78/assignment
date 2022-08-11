@@ -8,18 +8,24 @@ import {Router} from "@angular/router";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  todayISOString : string = new Date().toISOString();
 
-  constructor(private loginSrv:LoginSrvService,private router:Router) { }
+  constructor(private loginSrv:LoginSrvService,
+              private router:Router,
+  ) { }
 
   ngOnInit(): void {
+
+
   }
 
   LoginFun(user:string,pass:string) {
   this.loginSrv.LogSrv(user,pass).subscribe(res=>{
   if(res)
+    if(this.todayISOString<res.expiration)
     localStorage.setItem('token',res.token)
     this.router.navigate(['part1'])
-    this.loginSrv.setDataToBack(user)
+    this.loginSrv.setDataToBack(user,res.expiration)
 
   }
 

@@ -1,4 +1,4 @@
-import {Component, ElementRef, EventEmitter, Input, OnChanges, OnInit, Output, ViewChild} from '@angular/core';
+import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {FormBuilder} from "@angular/forms";
 import {Part1Service} from "../../../../srv/part1.service";
 import {debounceTime, map, Observable, tap} from "rxjs";
@@ -8,7 +8,7 @@ import {debounceTime, map, Observable, tap} from "rxjs";
   templateUrl: './coding-get-list.component.html',
   styleUrls: ['./coding-get-list.component.css']
 })
-export class CodingGetListComponent implements OnInit,OnChanges {
+export class CodingGetListComponent implements OnInit {
   @ViewChild('selectList', { static: false }) selectList: ElementRef | undefined ;
 
   CodingData: Observable<any> | undefined
@@ -20,10 +20,6 @@ export class CodingGetListComponent implements OnInit,OnChanges {
   @Input() selected:string=''
   constructor(private fb: FormBuilder,
               private codingsrv:Part1Service) { }
-ngOnChanges() {
-
-
-}
 
   ngOnInit(): void {
     this.CodingData=this.codingsrv.GetCoding('').pipe(

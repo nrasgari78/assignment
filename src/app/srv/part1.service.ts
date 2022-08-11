@@ -11,7 +11,6 @@ export class Part1Service {
 
   GetGrid():Observable<any> {
     let params = new HttpParams().set('folderId', '000000000201');
-
     return this.http.get<any>('/api/FolderData/getGrid',{params})
   }
   GetCoding(search:string){
@@ -22,7 +21,6 @@ export class Part1Service {
   }
   SubmitForm(data:any):Observable<any>{
     const body=JSON.stringify(data)
-    console.log(body)
     return this.http.post<any>('/api/FolderData/add',body)
   }
 }

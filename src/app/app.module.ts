@@ -13,6 +13,8 @@ const maskConfig: Partial<IConfig> = {
   validation: false,
 };
 import {SharedModule} from "./shared/shared.module";
+import {Router} from "@angular/router";
+import {LoginSrvService} from "./srv/login-srv.service";
 
 @NgModule({
   declarations: [
@@ -33,9 +35,14 @@ import {SharedModule} from "./shared/shared.module";
 
   ],
   providers: [
-    {provide:HTTP_INTERCEPTORS,
-      useClass:HeaderInterceptor,
-      multi:true,},
+    {
+      provide: HTTP_INTERCEPTORS,
+      useFactory: function (router: Router) {
+        return new HeaderInterceptor(router);
+      },
+      multi: true,
+      deps: [Router]
+    }
   ],
   bootstrap: [AppComponent]
 })

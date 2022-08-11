@@ -10,7 +10,7 @@ import {Router} from "@angular/router";
 export class ListdataComponent implements OnInit {
   gridData:any
   cols=new Array()
-data=new Array()
+   data=new Array()
   constructor(private griddata:Part1Service,
               private router:Router) { }
 
