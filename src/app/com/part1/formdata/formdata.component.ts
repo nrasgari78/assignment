@@ -41,7 +41,6 @@ export class FormdataComponent implements OnInit {
 
   submitform() {
 
-    this.loading = true
     if (this.formData.get(['Date'])?.errors?.['required']) {
       Swal.fire({icon: 'error', text: '!مقدار تاریخ خالی است'})
     } else if (this.formData.get(['subject'])?.errors?.['required']) {
@@ -61,6 +60,8 @@ export class FormdataComponent implements OnInit {
     } else
       {
       if (this.inpedit === true) {
+        this.loading = true
+
         const data = {
           "id": "0",
           "folderId": 201,

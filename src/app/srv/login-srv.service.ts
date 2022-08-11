@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {environment} from "../../environments/environment";
 import {BehaviorSubject, Subscriber} from "rxjs";
 
 @Injectable({
@@ -19,9 +18,9 @@ LogSrv(user:string,pass:string){
   return this.http.post<any>('/api/Auth/login',body)
 
 }
-  setDataToBack(val: string) {
+  setDataToBack(val: string,date:string) {
     this._Back.next('')
-    this._Back.next( this._Back.getValue().concat(val));
+    this._Back.next( this._Back.getValue().concat(val,'*'+date));
 
   }
   getDataTOBAck(): string {

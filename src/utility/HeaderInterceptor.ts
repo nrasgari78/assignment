@@ -1,25 +1,30 @@
 import {HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse
 } from "@angular/common/http";
 import {catchError, map, Observable, of, take, throwError} from "rxjs";
+import Swal from "sweetalert2";
+import {environment} from "../environments/environment";
 import {Router} from "@angular/router";
 
-import {environment} from "../environments/environment";
-
 export class HeaderInterceptor implements HttpInterceptor {
-  path=environment.apiUrl
-  constructor() {
+  todayISOString : string = new Date().toISOString();
+  constructor(private router: Router) {
   }
 
   private handleAuthError(err: HttpErrorResponse): Observable<any> {
-    //handle your auth error or rethrow
-    // if (err.status === 401 || err.status === 403) {
-    //   Swal.fire({icon: 'error', text: 'توکن منقضی شده است'}).then(x=>{
-    //     if(x.isConfirmed)  this.router.navigateByUrl(``);
-    //   })
-    //   // if you've caught / handled the error, you don't want to rethrow it unless you also want downstream consumers to have to handle it as well.
-    //   return of(err.message); // or EMPTY may be appropriate here
-    // }
+
+    // handle your auth error or rethrow
+    if (err.status === 401 || err.status === 403) {
+      {
+        Swal.fire({icon: 'error', text: 'توکن منقضی شده است!'}).then(x => {
+          if (x.isConfirmed)
+            this.router.navigate([''])
+
+        })
+        return of(err.message);
+      }
+    }
     return throwError(err);
+
   }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
