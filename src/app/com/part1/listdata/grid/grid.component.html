@@ -7,10 +7,7 @@
   </tr>
   </thead>
   <tbody >
-  <tr *ngFor="let item of gridData;trackBy:trackByFn;let j=index" class="text-center"
-      [style.background-color]="item.BackgroundColour"
-      [style.color]="item.color"
-      appMouseover>
+  <tr *ngFor="let item of gridData;trackBy:trackByFn;let j=index" class="text-center" appMouseover>
   <ng-container *ngFor="let i of len">
     <td class="th">{{item[i-1]}}</td>
   </ng-container>
