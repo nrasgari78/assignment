@@ -28,15 +28,9 @@ this.data=[]
 
         })
 
-          // this.cols.forEach((i: any,index) => {
-          //   console.log(index)
-          //     this.gridData.forEach((item: any) => {
-          //       this.data.push({index: item[i.key]})
-          //       console.log(this.data)
-          //
-          //     })
-          //
-          // })
+
+
+
       }
     })
 

@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {LoginSrvService} from "../../srv/login-srv.service";
-import {formatDate} from "@angular/common";
 
 @Component({
   selector: 'app-navbar',
@@ -9,7 +8,7 @@ import {formatDate} from "@angular/common";
 })
 export class NavbarComponent implements OnInit {
   userInfo=''
-  fDate:string=''
+  Fdate:string='1400-05-20'
   constructor(private loginsrv:LoginSrvService) {
   }
   ngOnInit() {
