@@ -8,7 +8,7 @@ import {Router} from "@angular/router";
   styleUrls: ['./listdata.component.css']
 })
 export class ListdataComponent implements OnInit {
-  gridData:any
+  gridData=new Array()
   cols=new Array()
    data=new Array()
   constructor(private griddata:Part1Service,

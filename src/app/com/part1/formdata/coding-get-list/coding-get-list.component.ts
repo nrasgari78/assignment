@@ -36,7 +36,7 @@ export class CodingGetListComponent implements OnInit {
 
       }
 
-  selectlst(item:any) {
+  selectlst(item:string) {
       this.eventselecteditem.emit(item)
     this.selected=item
 

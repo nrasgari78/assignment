@@ -3,7 +3,7 @@
     لیست داده ها
   </div>
   <div class="card-body mt-3">
-    <div class="row  px-4">
+    <div class="row  px-4" *ngIf="gridData">
       <app-grid [cols]="cols" [gridData]="data"></app-grid>
     </div>
 <div class="col-12">
